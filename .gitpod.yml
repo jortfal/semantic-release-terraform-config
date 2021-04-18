@@ -1,0 +1,25 @@
+# image:
+#   file: .gitpod.Containerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+# ports:
+#   - port: 3000
+#     onOpen: open-preview
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+# tasks:
+#   - init: echo 'init script' # runs during prebuild
+#     command: echo 'start script'
+tasks:
+  - name: Set up Git Config
+    openIn: bottom
+    command: git config --global user.name "jortfal" &&
+             git config --global user.email "jortfal@users.noreply.github.com" &&
+             git config --global commit.gpgsign true &&
+             git config --global user.signingkey C62738C0CBE3CDCA &&
+             touch private.gpg &&
+             echo 'WARNING!!! Do not forget to import the private gpg key ;)' &&
+             echo 'use "gpg --import private.gpg" to import private key '
+
+vscode:
+  extensions:
+    - yzhang.markdown-all-in-one@3.4.0:GR9Y7wA3m2/LsuZxLaCFtg==
