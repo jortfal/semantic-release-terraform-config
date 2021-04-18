@@ -4,63 +4,69 @@
     "version": "1.0.0-snapshot",
     "author": "@jortfal José Manuel Ortega Falcón (https://github.com/jortfal)",
     "bugs": {
-    "url": "https://github.com/jortfal/semantic-release-terraform-config/issues"
-},
-"contributors": ["@jortfal José Manuel Ortega Falcón (https://github.com/jortfal)"],
-"dependencies": {
-    "@semantic-release/git": "9.0.0",
-    "@semantic-release/changelog": "5.0.1"
-},
-"devDependencies": {
-    "semantic-release": "17.4.2",
-    "xo": "0.38.2"
-},
-"engines": {
-    "node": ">=10.18"
-},
-"files": [
-    "index.js"
-],
-"homepage": "https://github.com/jortfal/semantic-release-terraform-config#readme",
-"keywords": [
-    "terraform",
-    "terraform-modules",
-    "conventional-changelog",
-    "release",
-    "semantic-release",
-    "semantic-release-config",
-    "version"
-],
-"license": "Apache",
-"main": "index.js",
-"peerDependencies": {
-    "semantic-release": ">=16.0.0 <18.0.0"
-},
-"prettier": {
-    "printWidth": 120,
-    "trailingComma": "es5"
-},
-"publishConfig": {
-    "access": "public"
-},
-"repository": {
-    "type": "git",
-    "url": "https://github.com/jortfal/semantic-release-terraform-config.git"
-},
-"scripts": {
-    "semantic-release": "semantic-release",
-    "test": "xo"
-},
-"xo": {
-    "prettier": true,
-    "space": true,
-    "rules": {
-        "unicorn/string-content": "off"
-    }
-},
-"renovate": {
-    "extends": [
-        "github>semantic-release/.github"
+        "url": "https://github.com/jortfal/semantic-release-terraform-config/issues"
+    },
+    "contributors": [
+        "@jortfal José Manuel Ortega Falcón (https://github.com/jortfal)"
+    ],
+    "dependencies": {
+        "@semantic-release/git": "9.0.0",
+        "@semantic-release/changelog": "5.0.1",
+        "@google/semantic-release-replace-plugin": "1.0.2"
+    },
+    "devDependencies": {
+        "semantic-release": "17.4.2",
+        "xo": "0.38.2"
+    },
+    "engines": {
+        "node": ">=10.18"
+    },
+    "files": [
+        "index.js"
+    ],
+    "homepage": "https://github.com/jortfal/semantic-release-terraform-config#readme",
+    "keywords": [
+        "terraform",
+        "terraform-modules",
+        "conventional-changelog",
+        "release",
+        "semantic-release",
+        "semantic-release-config",
+        "version"
+    ],
+    "license": "Apache",
+    "main": "index.js",
+    "peerDependencies": {
+        "semantic-release": ">=16.0.0 <18.0.0"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "trailingComma": "es5"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jortfal/semantic-release-terraform-config.git"
+    },
+    "scripts": {
+        "semantic-release": "semantic-release",
+        "test": "xo"
+    },
+    "xo": {
+        "prettier": true,
+        "space": true,
+        "rules": {
+            "unicorn/string-content": "off"
+        }
+    },
+    "renovate": {
+        "extends": [
+            "github>semantic-release/.github"
         ]
+    },
+    "release": {
+        "branches": ["main"]
     }
 }
