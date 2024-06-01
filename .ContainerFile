@@ -23,3 +23,9 @@ RUN \
     python3-pip \
     vim \
     git
+
+# Install nvm (Node Version Manager)
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# Download and install Node.js
+RUN nvm install 20.14.0
