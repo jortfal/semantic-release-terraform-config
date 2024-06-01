@@ -35,11 +35,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
         - run: git config --global user.name github-actions
         - run: git config --global user.email github-actions@github.com
         - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v4
           with:
             node-version: ${{ matrix.node-version }}
         - name: Ensure dependencies are compatible with the version of node
