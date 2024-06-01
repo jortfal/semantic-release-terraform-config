@@ -28,7 +28,8 @@ RUN \
 
 # Install nvm (Node Version Manager)
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
-RUN export NVM_DIR="$HOME/.nvm" && \. "$NVM_DIR/nvm.sh" && \. "$NVM_DIR/bash_completion"
-
-# Download and install Node.js
-RUN nvm install $NODEJS_VERSION
+RUN export NVM_DIR="$HOME/.nvm"  && \
+  \. "$NVM_DIR/nvm.sh"  && \
+  \. "$NVM_DIR/bash_completion"  && \
+  # Download and install Node.js
+  nvm install $NODEJS_VERSION  
