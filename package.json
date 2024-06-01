@@ -1,7 +1,7 @@
 {
     "name": "@jortfal/semantic-release-terraform-config",
     "description": "semantic-release shareable config to create release of Terraform Modules",
-    "version": "1.0.0-snapshot",
+    "version": "1.1.0",
     "author": "@jortfal José Manuel Ortega Falcón (https://github.com/jortfal)",
     "bugs": {
         "url": "https://github.com/jortfal/semantic-release-terraform-config/issues"
