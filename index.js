@@ -14,7 +14,13 @@ limitations under the License.
 module.exports = {
   plugins: [
     '@semantic-release/commit-analyzer',
+    {
+      preset: 'conventionalcommits',
+    },
     '@semantic-release/release-notes-generator',
+    {
+      preset: 'conventionalcommits',
+    },
     '@semantic-release/github',
     '@semantic-release/changelog',
     [
@@ -23,8 +29,8 @@ module.exports = {
         replacements: [
           {
             files: ['locals.tf'],
-            from: `"Terraform Module Version" = ".*"`,
-            to: `"Terraform Module Version" = "\${nextRelease.version}"`,
+            from: `"Terraform Module Version"    = ".*"`,
+            to: `"Terraform Module Version"    = "\${nextRelease.gitTag}"`,
             results: [
               {
                 file: 'locals.tf',
@@ -42,7 +48,7 @@ module.exports = {
       '@semantic-release/git',
       {
         assets: ['locals.tf', 'CHANGELOG.md'],
-        message: `chore(release): \${nextRelease.version} [skip ci]\n\n\${nextRelease.notes}`,
+        message: `chore(release): \${nextRelease.gitTag} [skip ci]\n\n\${nextRelease.notes}`,
       },
     ],
   ],
