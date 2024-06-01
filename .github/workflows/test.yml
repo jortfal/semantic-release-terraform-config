@@ -17,10 +17,21 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version:
-          - 10.18.0
-          - 12
-          - 14
+        node-version: # Node.js Releases https://nodejs.org/en/about/previous-releases#nodejs-releases
+          - 10.24.1  # LTS Unsupported
+          - 11.15.0  # --- Unsupported
+          - 12.22.12 # LTS Unsupported
+          - 13.14.0  # --- Unsupported
+          - 14.21.3  # LTS Unsupported
+          - 15.14.0  # --- Unsupported
+          - 16.20.2  # LTS Unsupported
+          - 17.9.1   # --- Unsupported
+          - 18.20.3  # LTS Maintenance
+          - 19.9.0   # --- Unsupported
+          - 20.14.0  # LTS Active
+          - 21       # Current
+          - 22       # Current
+
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
