@@ -11,8 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 */
 
-/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
-export default {
+const config = {
   plugins: [
     '@semantic-release/commit-analyzer',
     {
@@ -54,3 +53,5 @@ export default {
     ],
   ],
 };
+
+export default config;
