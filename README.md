@@ -5,7 +5,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jortfal/semantic-release-terraform-config)
 ![GitHub Release Date](https://img.shields.io/github/release-date/jortfal/semantic-release-terraform-config)
 ![GitHub license](https://img.shields.io/github/license/jortfal/semantic-release-terraform-config)
-![Maintenance](https://img.shields.io/maintenance/yes/2021?color=green)
+![Maintenance](https://img.shields.io/maintenance/yes/2024?color=green)
 ![Maintainer](https://img.shields.io/badge/maintainer-jortfal-green)
 [![Build Status](https://github.com/jortfal/semantic-release-terraform-config/workflows/Test/badge.svg)](https://github.com/jortfal/semantic-release-terraform-config/actions?query=workflow%3ATest+branch%3Amaster) [![npm latest version](https://img.shields.io/npm/v/@jortfal/semantic-release-terraform-config/latest.svg)](https://www.npmjs.com/package/jortfal/semantic-release-terraform-config)
 

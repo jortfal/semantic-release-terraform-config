@@ -11,7 +11,8 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 */
 
-module.exports = {
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
+export default {
   plugins: [
     '@semantic-release/commit-analyzer',
     {
