@@ -1,8 +1,8 @@
 FROM debian:bookworm-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG NVM_VERSION=v0.39.7
-ARG NODEJS_VERSION=20.14.0
+ARG NVM_VERSION=v0.40.4
+ARG NODEJS_VERSION=24.14.1
 
 # Update Local Repository Index and Install apt-utils
 RUN apt-get update && apt-get -y --no-install-recommends install apt-utils
