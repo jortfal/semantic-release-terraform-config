@@ -35,7 +35,7 @@ jobs:
           # - v17     # (no codename) --- End-of-life (EoL)
           # - v18     # Hydrogen      --- End-of-life (EoL)
           # - v19     # (no codename) --- End-of-life (EoL)
-          - 20        # Iron          --- **Maintenance LTS**
+          #- v20      # Iron          --- **Maintenance LTS** NOTE: Not compatible with version of node/npm: @semantic-release/github@12.0.6
           # - v21     # (no codename) --- End-of-life (EoL)
           - 22        # Jod           --- **Maintenance LTS**
           # - v23     # (no codename) --- End-of-life (EoL)
