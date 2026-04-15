@@ -5,25 +5,31 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jortfal/semantic-release-terraform-config)
 ![GitHub Release Date](https://img.shields.io/github/release-date/jortfal/semantic-release-terraform-config)
 ![GitHub license](https://img.shields.io/github/license/jortfal/semantic-release-terraform-config)
-![Maintenance](https://img.shields.io/maintenance/yes/2024?color=green)
+![Maintenance](https://img.shields.io/maintenance/yes/2026?color=green)
 ![Maintainer](https://img.shields.io/badge/maintainer-jortfal-green)
-[![Build Status](https://github.com/jortfal/semantic-release-terraform-config/workflows/Test/badge.svg)](https://github.com/jortfal/semantic-release-terraform-config/actions?query=workflow%3ATest+branch%3Amaster) [![npm latest version](https://img.shields.io/npm/v/@jortfal/semantic-release-terraform-config/latest.svg)](https://www.npmjs.com/package/jortfal/semantic-release-terraform-config)
+[![Build Status](https://github.com/jortfal/semantic-release-terraform-config/workflows/Test/badge.svg)](https://github.com/jortfal/semantic-release-terraform-config/actions?query=workflow%3ATest+branch%3Amain)
+[![npm latest version](https://img.shields.io/npm/v/@jortfal/semantic-release-terraform-config/latest.svg)](https://www.npmjs.com/package/@jortfal/semantic-release-terraform-config)
 
 ## Plugins
 
-This shareable configuration use the following plugins:
+This shareable configuration uses the following plugins:
 
-- [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer)
-- [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator)
+- [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer) (preset: `conventionalcommits`)
+- [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator) (preset: `conventionalcommits`)
 - [`@semantic-release/github`](https://github.com/semantic-release/github)
 - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog)
-- [`@google/semantic-release-replace-plugin`](https://github.com/google/semantic-release-replace-plugin)
+- [`semantic-release-replace-plugin`](https://github.com/jpoehnelt/semantic-release-replace-plugin)
 - [`@semantic-release/git`](https://github.com/semantic-release/git)
+
+## Requirements
+
+- Node.js `>= 22.14.0`
+- semantic-release `>= 17.4.2 < 26.0.0`
 
 ## Install
 
 ```bash
-$ npm install --save-dev semantic-release @jortfal/semantic-release-terraform-config
+npm install --save-dev semantic-release @jortfal/semantic-release-terraform-config
 ```
 
 ## Usage
@@ -42,12 +48,16 @@ See each [plugin](#plugins) documentation for required installation and configur
 
 ### Overwritten options
 
-This following options are set by this shareable config:
+The following options are set by this shareable config:
 
-| Option                                                                          | Value                                                                                                                          |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-|[`replacements`](https://github.com/google/semantic-release-replace-plugin#usage)| {"files": ["locals.tf"], "from": "\"Terraform Module Version\" = \".*\"", "to": "\"Terraform Module Version\" = \"${nextRelease.version}\""} |
-| [`assets`](https://github.com/semantic-release/git#assets) | ["locals.tf", "CHANGELOG.md"] |
-| [`message`](https://github.com/semantic-release/git#message) | chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes} |
+| Option | Value |
+| --- | --- |
+| [`replacements`](https://github.com/jpoehnelt/semantic-release-replace-plugin#usage) | `{"files": ["locals.tf"], "from": "\"Terraform Module Version\"   = \".*\"", "to": "\"Terraform Module Version\"   = \"${nextRelease.gitTag}\""}` |
+| [`assets`](https://github.com/semantic-release/git#assets) | `["locals.tf", "CHANGELOG.md"]` |
+| [`message`](https://github.com/semantic-release/git#message) | `chore(release): ${nextRelease.gitTag} [skip ci]\n\n${nextRelease.notes}` |
 
 **NOTE**: other options use their default values. See each [plugin](#plugins) documentation for available options.
+
+## License
+
+[Apache 2.0](LICENSE)
