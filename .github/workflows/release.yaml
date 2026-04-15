@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write  # Required for OIDC (npm Trusted Publishing)
+  contents: write  # Required for semantic-release to push commits and create tags/releases
+
 jobs:
   release:
     name: release
@@ -20,10 +24,11 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24.14.1
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup NPM
         uses: bahmutov/npm-install@v1
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         run: npx semantic-release
