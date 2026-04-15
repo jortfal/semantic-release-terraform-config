@@ -7,7 +7,7 @@
 ![GitHub license](https://img.shields.io/github/license/jortfal/semantic-release-terraform-config)
 ![Maintenance](https://img.shields.io/maintenance/yes/2026?color=green)
 ![Maintainer](https://img.shields.io/badge/maintainer-jortfal-green)
-[![Build Status](https://github.com/jortfal/semantic-release-terraform-config/workflows/Test/badge.svg)](https://github.com/jortfal/semantic-release-terraform-config/actions?query=workflow%3ATest+branch%3Amaster)
+[![Build Status](https://github.com/jortfal/semantic-release-terraform-config/workflows/Test/badge.svg)](https://github.com/jortfal/semantic-release-terraform-config/actions?query=workflow%3ATest+branch%3Amain)
 [![npm latest version](https://img.shields.io/npm/v/@jortfal/semantic-release-terraform-config/latest.svg)](https://www.npmjs.com/package/@jortfal/semantic-release-terraform-config)
 
 ## Plugins
@@ -18,7 +18,7 @@ This shareable configuration uses the following plugins:
 - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator) (preset: `conventionalcommits`)
 - [`@semantic-release/github`](https://github.com/semantic-release/github)
 - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog)
-- [`@google/semantic-release-replace-plugin`](https://github.com/google/semantic-release-replace-plugin)
+- [`semantic-release-replace-plugin`](https://github.com/jpoehnelt/semantic-release-replace-plugin)
 - [`@semantic-release/git`](https://github.com/semantic-release/git)
 
 ## Requirements
@@ -52,7 +52,7 @@ The following options are set by this shareable config:
 
 | Option | Value |
 | --- | --- |
-| [`replacements`](https://github.com/google/semantic-release-replace-plugin#usage) | `{"files": ["locals.tf"], "from": "\"Terraform Module Version\" = \".*\"", "to": "\"Terraform Module Version\" = \"${nextRelease.gitTag}\""}` |
+| [`replacements`](https://github.com/jpoehnelt/semantic-release-replace-plugin#usage) | `{"files": ["locals.tf"], "from": "\"Terraform Module Version\" = \".*\"", "to": "\"Terraform Module Version\" = \"${nextRelease.gitTag}\""}` |
 | [`assets`](https://github.com/semantic-release/git#assets) | `["locals.tf", "CHANGELOG.md"]` |
 | [`message`](https://github.com/semantic-release/git#message) | `chore(release): ${nextRelease.gitTag} [skip ci]\n\n${nextRelease.notes}` |
 

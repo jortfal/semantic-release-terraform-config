@@ -24,7 +24,7 @@ const config = {
     '@semantic-release/github',
     '@semantic-release/changelog',
     [
-      '@google/semantic-release-replace-plugin',
+      'semantic-release-replace-plugin',
       {
         replacements: [
           {
