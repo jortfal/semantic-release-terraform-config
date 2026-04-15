@@ -1,0 +1,60 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - release/*
+      - hotfix/*
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        node-version: # Node.js Releases https://nodejs.org/en/about/previous-releases#looking-for-the-latest-release-of-a-version-branch
+          # - v0      # (no codename) --- End-of-life (EoL)
+          # - v4      # Argon         --- End-of-life (EoL)
+          # - v5      # (no codename) --- End-of-life (EoL)
+          # - v6      # Boron         --- End-of-life (EoL)
+          # - v7      # (no codename) --- End-of-life (EoL)
+          # - v8      # Carbon        --- End-of-life (EoL)
+          # - v9      # (no codename) --- End-of-life (EoL)
+          # - v10     # Dubnium       --- End-of-life (EoL)
+          # - v11     # (no codename) --- End-of-life (EoL)
+          # - v12     # Erbium        --- End-of-life (EoL)
+          # - v13     # (no codename) --- End-of-life (EoL)
+          # - v14     # Fermium       --- End-of-life (EoL)
+          # - v15     # (no codename) --- End-of-life (EoL)
+          # - v16     # Gallium       --- End-of-life (EoL)
+          # - v17     # (no codename) --- End-of-life (EoL)
+          # - v18     # Hydrogen      --- End-of-life (EoL)
+          # - v19     # (no codename) --- End-of-life (EoL)
+          #- v20      # Iron          --- **Maintenance LTS** NOTE: Not compatible with version of node/npm: @semantic-release/github@12.0.6
+          # - v21     # (no codename) --- End-of-life (EoL)
+          - 22        # Jod           --- **Maintenance LTS**
+          # - v23     # (no codename) --- End-of-life (EoL)
+          - 24        # Krypton       --- **Active LTS**
+          - 25        # (no codename) --- **Current**
+
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v6
+        - run: git config --global user.name github-actions
+        - run: git config --global user.email github-actions@github.com
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v6
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name: Ensure dependencies are compatible with the version of node
+          run: echo 'engine-strict=true' >> .npmrc
+        - name: Setup NPM
+          uses: bahmutov/npm-install@v1
+        - name: Run tests
+          run: npm run test
