@@ -52,7 +52,7 @@ The following options are set by this shareable config:
 
 | Option | Value |
 | --- | --- |
-| [`replacements`](https://github.com/jpoehnelt/semantic-release-replace-plugin#usage) | `{"files": ["locals.tf"], "from": "\"Terraform Module Version\" = \".*\"", "to": "\"Terraform Module Version\" = \"${nextRelease.gitTag}\""}` |
+| [`replacements`](https://github.com/jpoehnelt/semantic-release-replace-plugin#usage) | `{"files": ["locals.tf"], "from": "\"Terraform Module Version\"   = \".*\"", "to": "\"Terraform Module Version\"   = \"${nextRelease.gitTag}\""}` |
 | [`assets`](https://github.com/semantic-release/git#assets) | `["locals.tf", "CHANGELOG.md"]` |
 | [`message`](https://github.com/semantic-release/git#message) | `chore(release): ${nextRelease.gitTag} [skip ci]\n\n${nextRelease.notes}` |
 
